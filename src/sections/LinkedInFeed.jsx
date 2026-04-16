@@ -3,37 +3,24 @@ import React, { useEffect, useRef } from "react";
 const posts = [
   {
     id: 1,
-    title: "Enhancing the Sign-in Page",
-    content: "Integrated Firestore for user data storage, added age & gender selection with dynamic Firebase fetching, and improved security with password validation and duplicate email detection. #Firebase #Flutter #AppDevelopment",
-    image: "/images/project1.png",
+    title: "Client Excellence Award – HashAgile Technologies 🏆",
+    content: "Honored to receive the Client Excellence Award at HashAgile Technologies. Grateful for the trust, the recognition, and a team that constantly pushes me to deliver quality. #HashAgile #Excellence #Recognition",
+    image: "/images/post1.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
-    id: 2,
-    title: "Forgot Password Functionality",
-    content: "Implemented a secure Forgot Password flow — users receive a reset link via email, with intuitive UIs for both request and confirmation screens. #Flutter #Security #UX",
-    image: "/images/project2.png",
+    id: 11,
+    title: "AI-Based Innovation Unleashed �",
+    content: "Excited to be the Resource Person for the Expert Talk on AI-Based Innovation Unleashed at Rathinam Technical Campus! This session focuses on how AI can move beyond ideas to create real-world societal impact. Grateful to share insights and practical perspectives with students and innovators. 📅 31st Jan 2026. Looking forward to an engaging discussion! 🙌 #AIInnovation #ExpertTalk",
+    image: "/images/post-ai-innovation.png",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
-    id: 3,
-    title: "Dynamic Category Section",
-    content: "Completed the Category Section for a Flutter app with real-time Firebase integration — dynamic loading, smooth network images, and a clean responsive UI. #Flutter #Firebase #MobileDev",
-    image: "/images/project3.png",
-    link: "https://www.linkedin.com/in/jothiswaranoh/",
-  },
-  {
-    id: 4,
-    title: "E-Commerce App: Categories & Top-Selling",
-    content: "Shipped two major features for an e-commerce platform — a dynamic Category system and a Top-Selling section to surface trending products instantly. #eCommerce #Flutter #RubyOnRails",
-    image: "/images/post-webapp.jpg",
-    link: "https://www.linkedin.com/in/jothiswaranoh/",
-  },
-  {
-    id: 5,
-    title: "\"New In\" Section Launched",
-    content: "Successfully delivered the 'New In' section — a sleek, dark-mode UI that highlights the latest products with smooth loading and a premium feel. #MobileApp #UIUX #Flutter",
-    image: "/images/post-newin.jpg",
+    id: 12,
+    title: "Wrapping up 2025 with HashAgile 💙",
+    content: "☕ Chai. 🎉 Cheers. 💙 Cherished moments. That's how we wrapped up 2025. We came together for a heartfelt Virtual Year-End Break-Up meet. No slides. No formality. Just people. Hash Agile Technologies gifted the team an 11-day remote working window to slow down and recharge. Culture isn't about where we work from. It's about how we show up for each other. 2026 — we're ready! #HashAgileCulture #PeopleFirst",
+    image: "/images/post-hashagile-culture.png",
+    customClass: "suguna-zoom",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
@@ -45,9 +32,24 @@ const posts = [
   },
   {
     id: 7,
-    title: "Chief Guest – Suguna College of Engineering",
-    content: "Honored to be a Chief Guest at Suguna College of Engineering. Inspired by the passion of students who are ready to shape the future with innovation. Grateful to Hash Agile for the support. #Leadership #Mentorship",
-    image: "/images/workshop1.jpg",
+    title: "Chief Guest – Suguna College of Engineering ✨",
+    content: "Honored to be invited as the Chief Guest at Suguna College of Engineering. I truly believe that when you run with love towards something, it never fails — because it is love that drives success. ❤️ It was inspiring to interact with young, bright minds... A heartfelt thanks to Suguna College of Engineering and Hashagile. 🙏 #Leadership #Mentorship #LearningJourney",
+    image: "/images/post-suguna.png",
+    customClass: "suguna-zoom",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 2,
+    title: "From Curiosity to a Full Security Report �",
+    content: "Conducted in-depth security research on Xsolla's public infrastructure — exploring API enumeration, OAuth flow testing, and information disclosure patterns. Compiled a detailed penetration report. Every finding, accepted or not, sharpens the craft. #BugBounty #CyberSecurity #EthicalHacking",
+    image: "/images/post-xsolla.png",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 10,
+    title: "Reflecting on my Cybersecurity Roots 🔐",
+    content: "Lately, while working deeply across web and mobile development, I almost forgot a part of my journey — I started out as a cybersecurity researcher. Today, I found an old bug-report response from the Jio Security Team. A powerful reminder that our roots are still a big part of who we are. Feeling inspired to slowly reconnect with security research! 🚀 #CyberSecurity #BugBounty #DeveloperLife",
+    image: "/images/jothis.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
@@ -143,7 +145,11 @@ const LinkedInFeed = () => {
           {posts.map((post) => (
             <div key={post.id} className="glass-card post-card">
               <div className="post-image-wrapper">
-                <img src={post.image} alt={post.title} className="post-image" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className={`post-image ${post.customClass || ''}`}
+                />
                 <div className="post-overlay">
                   <a
                     href={post.link}
@@ -418,6 +424,14 @@ const LinkedInFeed = () => {
 
 .post-card:hover .post-image {
   transform: scale(1.08);
+}
+
+.suguna-zoom {
+  transform: scale(1.7);
+}
+
+.post-card:hover .suguna-zoom {
+  transform: scale(1.8);
 }
 
 .post-overlay {
