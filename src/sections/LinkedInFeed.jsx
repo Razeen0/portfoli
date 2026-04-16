@@ -3,37 +3,16 @@ import React, { useEffect, useRef } from "react";
 const posts = [
   {
     id: 1,
-    title: "Enhancing the Sign-in Page",
-    content: "Integrated Firestore for user data storage, added age & gender selection with dynamic Firebase fetching, and improved security with password validation and duplicate email detection. #Firebase #Flutter #AppDevelopment",
-    image: "/images/project1.png",
+    title: "Client Excellence Award – HashAgile Technologies 🏆",
+    content: "Honored to receive the Client Excellence Award at HashAgile Technologies. Grateful for the trust, the recognition, and a team that constantly pushes me to deliver quality. #HashAgile #Excellence #Recognition",
+    image: "/images/post1.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
     id: 2,
-    title: "Forgot Password Functionality",
-    content: "Implemented a secure Forgot Password flow — users receive a reset link via email, with intuitive UIs for both request and confirmation screens. #Flutter #Security #UX",
-    image: "/images/project2.png",
-    link: "https://www.linkedin.com/in/jothiswaranoh/",
-  },
-  {
-    id: 3,
-    title: "Dynamic Category Section",
-    content: "Completed the Category Section for a Flutter app with real-time Firebase integration — dynamic loading, smooth network images, and a clean responsive UI. #Flutter #Firebase #MobileDev",
-    image: "/images/project3.png",
-    link: "https://www.linkedin.com/in/jothiswaranoh/",
-  },
-  {
-    id: 4,
-    title: "E-Commerce App: Categories & Top-Selling",
-    content: "Shipped two major features for an e-commerce platform — a dynamic Category system and a Top-Selling section to surface trending products instantly. #eCommerce #Flutter #RubyOnRails",
-    image: "/images/post-webapp.jpg",
-    link: "https://www.linkedin.com/in/jothiswaranoh/",
-  },
-  {
-    id: 5,
-    title: "\"New In\" Section Launched",
-    content: "Successfully delivered the 'New In' section — a sleek, dark-mode UI that highlights the latest products with smooth loading and a premium feel. #MobileApp #UIUX #Flutter",
-    image: "/images/post-newin.jpg",
+    title: "From Curiosity to a Full Security Report 🔐",
+    content: "Conducted in-depth security research on Xsolla's public infrastructure — exploring API enumeration, OAuth flow testing, and information disclosure patterns. Compiled a detailed penetration report. Every finding, accepted or not, sharpens the craft. #BugBounty #CyberSecurity #EthicalHacking",
+    image: "/images/post2.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
