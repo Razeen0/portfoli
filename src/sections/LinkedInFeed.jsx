@@ -9,10 +9,18 @@ const posts = [
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
-    id: 2,
-    title: "From Curiosity to a Full Security Report 🔐",
-    content: "Conducted in-depth security research on Xsolla's public infrastructure — exploring API enumeration, OAuth flow testing, and information disclosure patterns. Compiled a detailed penetration report. Every finding, accepted or not, sharpens the craft. #BugBounty #CyberSecurity #EthicalHacking",
-    image: "/images/post2.jpg",
+    id: 11,
+    title: "AI-Based Innovation Unleashed �",
+    content: "Excited to be the Resource Person for the Expert Talk on AI-Based Innovation Unleashed at Rathinam Technical Campus! This session focuses on how AI can move beyond ideas to create real-world societal impact. Grateful to share insights and practical perspectives with students and innovators. 📅 31st Jan 2026. Looking forward to an engaging discussion! 🙌 #AIInnovation #ExpertTalk",
+    image: "/images/post-ai-innovation.png",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 12,
+    title: "Wrapping up 2025 with HashAgile 💙",
+    content: "☕ Chai. 🎉 Cheers. 💙 Cherished moments. That's how we wrapped up 2025. We came together for a heartfelt Virtual Year-End Break-Up meet. No slides. No formality. Just people. Hash Agile Technologies gifted the team an 11-day remote working window to slow down and recharge. Culture isn't about where we work from. It's about how we show up for each other. 2026 — we're ready! #HashAgileCulture #PeopleFirst",
+    image: "/images/post-hashagile-culture.png",
+    customClass: "suguna-zoom",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
@@ -24,9 +32,24 @@ const posts = [
   },
   {
     id: 7,
-    title: "Chief Guest – Suguna College of Engineering",
-    content: "Honored to be a Chief Guest at Suguna College of Engineering. Inspired by the passion of students who are ready to shape the future with innovation. Grateful to Hash Agile for the support. #Leadership #Mentorship",
-    image: "/images/workshop1.jpg",
+    title: "Chief Guest – Suguna College of Engineering ✨",
+    content: "Honored to be invited as the Chief Guest at Suguna College of Engineering. I truly believe that when you run with love towards something, it never fails — because it is love that drives success. ❤️ It was inspiring to interact with young, bright minds... A heartfelt thanks to Suguna College of Engineering and Hashagile. 🙏 #Leadership #Mentorship #LearningJourney",
+    image: "/images/post-suguna.png",
+    customClass: "suguna-zoom",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 2,
+    title: "From Curiosity to a Full Security Report �",
+    content: "Conducted in-depth security research on Xsolla's public infrastructure — exploring API enumeration, OAuth flow testing, and information disclosure patterns. Compiled a detailed penetration report. Every finding, accepted or not, sharpens the craft. #BugBounty #CyberSecurity #EthicalHacking",
+    image: "/images/post-xsolla.png",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 10,
+    title: "Reflecting on my Cybersecurity Roots 🔐",
+    content: "Lately, while working deeply across web and mobile development, I almost forgot a part of my journey — I started out as a cybersecurity researcher. Today, I found an old bug-report response from the Jio Security Team. A powerful reminder that our roots are still a big part of who we are. Feeling inspired to slowly reconnect with security research! 🚀 #CyberSecurity #BugBounty #DeveloperLife",
+    image: "/images/jothis.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
@@ -122,7 +145,11 @@ const LinkedInFeed = () => {
           {posts.map((post) => (
             <div key={post.id} className="glass-card post-card">
               <div className="post-image-wrapper">
-                <img src={post.image} alt={post.title} className="post-image" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className={`post-image ${post.customClass || ''}`}
+                />
                 <div className="post-overlay">
                   <a
                     href={post.link}
@@ -397,6 +424,14 @@ const LinkedInFeed = () => {
 
 .post-card:hover .post-image {
   transform: scale(1.08);
+}
+
+.suguna-zoom {
+  transform: scale(1.7);
+}
+
+.post-card:hover .suguna-zoom {
+  transform: scale(1.8);
 }
 
 .post-overlay {
