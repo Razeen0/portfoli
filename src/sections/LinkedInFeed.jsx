@@ -3,20 +3,67 @@ import React, { useEffect, useRef } from "react";
 const posts = [
   {
     id: 1,
-    title: "Software Development at Hash Agile",
-    content:
-      "Excited to share my journey as a Software Developer at Hash Agile Technologies! Building scalable solutions, integrating modern frameworks, and ensuring top-notch application security through rigorous VAPT. #InnovateElevateInspire",
-    image: "/images/post1.jpg",
+    title: "Enhancing the Sign-in Page",
+    content: "Integrated Firestore for user data storage, added age & gender selection with dynamic Firebase fetching, and improved security with password validation and duplicate email detection. #Firebase #Flutter #AppDevelopment",
+    image: "/images/project1.png",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
   {
     id: 2,
-    title: "VAPT & Ethical Hacking",
-    content:
-      "Security is not just an afterthought; it's a prerequisite. Proud to leverage my skills as an Ethical Hacker and VAPT Specialist to proactively secure full-stack applications against emerging threats.",
-    image: "/images/post2.jpg",
+    title: "Forgot Password Functionality",
+    content: "Implemented a secure Forgot Password flow — users receive a reset link via email, with intuitive UIs for both request and confirmation screens. #Flutter #Security #UX",
+    image: "/images/project2.png",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
   },
+  {
+    id: 3,
+    title: "Dynamic Category Section",
+    content: "Completed the Category Section for a Flutter app with real-time Firebase integration — dynamic loading, smooth network images, and a clean responsive UI. #Flutter #Firebase #MobileDev",
+    image: "/images/project3.png",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 4,
+    title: "E-Commerce App: Categories & Top-Selling",
+    content: "Shipped two major features for an e-commerce platform — a dynamic Category system and a Top-Selling section to surface trending products instantly. #eCommerce #Flutter #RubyOnRails",
+    image: "/images/post-webapp.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 5,
+    title: "\"New In\" Section Launched",
+    content: "Successfully delivered the 'New In' section — a sleek, dark-mode UI that highlights the latest products with smooth loading and a premium feel. #MobileApp #UIUX #Flutter",
+    image: "/images/post-newin.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 6,
+    title: "Bug Bounty Journey Update 🔐",
+    content: "Submitted an Open Redirect vulnerability on Bugcrowd (Atlassian). A P5, but a huge learning moment on demonstrating impact and chaining vulnerabilities. Every report brings me closer. #BugBounty #CyberSecurity",
+    image: "/images/post-bugbounty.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 7,
+    title: "Chief Guest – Suguna College of Engineering",
+    content: "Honored to be a Chief Guest at Suguna College of Engineering. Inspired by the passion of students who are ready to shape the future with innovation. Grateful to Hash Agile for the support. #Leadership #Mentorship",
+    image: "/images/workshop1.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 8,
+    title: "Mumbai Hacks Hackathon",
+    content: "Attended Mumbai Hacks and tackled a real-world financial problem as a team. An incredible experience of learning, collaboration, and innovation — thanks to Hash Agile for the support! #MumbaiHacks #Hackathon #FinTech",
+    image: "/images/post-mumbai.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  },
+  {
+    id: 9,
+    title: "Development Foundations with GitHub",
+    content: "Spoke on 'Development Foundations with GitHub' at Rathinam Technical Campus. Focused on empowering students to think independently — not just use tools, but understand them. #Git #GitHub #TechEducation #Mentorship",
+    image: "/images/post-github.jpg",
+    link: "https://www.linkedin.com/in/jothiswaranoh/",
+  }
 ];
 
 const testimonials = [
@@ -117,7 +164,6 @@ const LinkedInFeed = () => {
           ))}
         </div>
 
-        {/* COMMENTS SECTION */}
         <div className="comments-section">
           <h3 className="comments-title">
             <span className="text-gradient">Community Feedback</span>
