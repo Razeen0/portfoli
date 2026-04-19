@@ -10,7 +10,7 @@ const posts = [
   },
   {
     id: 11,
-    title: "AI-Based Innovation Unleashed �",
+    title: "AI-Based Innovation Unleashed 🚀",
     content: "Excited to be the Resource Person for the Expert Talk on AI-Based Innovation Unleashed at Rathinam Technical Campus! This session focuses on how AI can move beyond ideas to create real-world societal impact. Grateful to share insights and practical perspectives with students and innovators. 📅 31st Jan 2026. Looking forward to an engaging discussion! 🙌 #AIInnovation #ExpertTalk",
     image: "/images/post-ai-innovation.png",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
@@ -40,7 +40,7 @@ const posts = [
   },
   {
     id: 2,
-    title: "From Curiosity to a Full Security Report �",
+    title: "From Curiosity to a Full Security Report 🛡️",
     content: "Conducted in-depth security research on Xsolla's public infrastructure — exploring API enumeration, OAuth flow testing, and information disclosure patterns. Compiled a detailed penetration report. Every finding, accepted or not, sharpens the craft. #BugBounty #CyberSecurity #EthicalHacking",
     image: "/images/post-xsolla.png",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
@@ -65,7 +65,7 @@ const posts = [
     content: "Spoke on 'Development Foundations with GitHub' at Rathinam Technical Campus. Focused on empowering students to think independently — not just use tools, but understand them. #Git #GitHub #TechEducation #Mentorship",
     image: "/images/post-github.jpg",
     link: "https://www.linkedin.com/in/jothiswaranoh/",
-  }
+  },
 ];
 
 const testimonials = [
@@ -73,16 +73,14 @@ const testimonials = [
     id: 1,
     name: "Arun Kumar",
     role: "Senior Developer",
-    comment:
-      "Well deserved recognition! Your contribution to application security and rigorous VAPT truly stand out.",
+    comment: "Well deserved recognition! Your contribution to application security and rigorous VAPT truly stand out.",
     likes: 14,
   },
   {
     id: 2,
     name: "Dr. Priya Raman",
     role: "Academic Coordinator",
-    comment:
-      "Your journey from Rathinam Technical Campus to a VAPT Specialist is truly inspiring for all our students.",
+    comment: "Your journey from Rathinam Technical Campus to a VAPT Specialist is truly inspiring for all our students.",
     likes: 9,
   },
 ];
@@ -115,25 +113,9 @@ const LinkedInFeed = () => {
         <div className="glow-sphere sphere-1"></div>
         <div className="glow-sphere sphere-2"></div>
 
-        {/* PROFILE HEADER */}
-        <div className="profile-header">
-          <div className="profile-image-container">
-            <div className="ring-animation"></div>
-            <img
-              src="/images/jothis.jpg"
-              alt="Jothiswaran R"
-              className="profile-image"
-            />
-          </div>
-
-          <h2 className="profile-name">
-            Jothiswaran (jothis) R
-          </h2>
-
-          <p className="profile-headline">
-            Software Developer @ Hash Agile | VAPT Specialist | Ethical Hacker
-          </p>
-          <div className="profile-badges">
+        <div className="text-center mb-12 mt-16">
+          <h2 className="text-[35px] sm:text-[45px] font-bold text-white mb-2">Works & Highlights</h2>
+          <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
             <span className="badge">#InnovateElevateInspire</span>
             <span className="badge">React & Rails</span>
             <span className="badge">Cybersecurity</span>

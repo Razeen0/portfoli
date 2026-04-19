@@ -50,7 +50,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="overflow-hidden">
+      <div className="overflow-hidden bg-[#0a0a0d]">
         <Hero id="hero" className="hero" />
         {/* <ShowcaseSection /> */}
         <RolesShowcase />

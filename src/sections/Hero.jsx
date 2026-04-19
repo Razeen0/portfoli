@@ -6,87 +6,78 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = ({ id, className }) => {
   const heroRef = useRef(null);
-  const textRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Initial Load Entry Animation (Apple style slow fade in)
       gsap.fromTo(
-        ".hero-bg",
-        { scale: 1.1, filter: "blur(5px)" },
-        { scale: 1, filter: "blur(0px)", duration: 2.5, ease: "power3.out" }
+        ".hero-text > *",
+        { opacity: 0, x: -50 },
+        { opacity: 1, x: 0, duration: 1, stagger: 0.15, ease: "power3.out" }
       );
-
       gsap.fromTo(
-        textRef.current.children,
-        { autoAlpha: 0, y: 40 },
-        { autoAlpha: 1, y: 0, duration: 1.5, stagger: 0.2, ease: "power3.out", delay: 0.4 }
+        ".hero-image",
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.3 }
       );
-
-      // 2. Parallax and Fade out on Scroll Down (Tesla/Apple aesthetic)
-      gsap.to(".hero-bg", {
-        yPercent: 40,
-        scale: 1.05,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
-
-      gsap.to(textRef.current, {
-        yPercent: 50,
-        autoAlpha: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        }
-      });
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section
-      id={id || "hero"}
-      ref={heroRef}
-      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${className || ""}`}
-    >
-      {/* Background Image with animated class */}
-      <div
-        className="hero-bg absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/jothis-pro.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "30% 25%",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+    <section id={id || "hero"} ref={heroRef} className={`relative pt-32 pb-20 lg:pt-48 lg:pb-32 min-h-screen flex items-center overflow-hidden w-full bg-[#050505] ${className || ""}`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 
-      {/* Dark Overlay for better contrast */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
-
-      {/* Content */}
-      <div ref={textRef} className="relative z-20 text-center text-white px-4 w-full max-w-5xl">
-        <h1 className="text-[12vw] sm:text-[90px] md:text-[130px] font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-white via-gray-300 to-gray-500 drop-shadow-2xl leading-none whitespace-nowrap">
-          Jothiswaran R
-        </h1>
-
-        <div className="mt-6 md:mt-8 text-center px-4">
-          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 tracking-wide">
-            Software Developer <span className="block sm:inline text-blue-400 mt-1 sm:mt-0">@ Hash Agile</span>
+        {/* Left Content */}
+        <div className="hero-text flex flex-col items-start gap-4">
+          <h1 className="text-[55px] sm:text-[65px] md:text-[85px] lg:text-[95px] font-extrabold tracking-tight text-[#e5e5e5] leading-[1.05] whitespace-nowrap">
+            Jothiswaran R
+          </h1>
+          <h2 className="text-xl md:text-3xl font-bold text-[#e5e5e5] mt-1">
+            Software Developer <span className="text-[#3b82f6]">@ Hash Agile</span>
+          </h2>
+          <p className="text-[11px] md:text-[13px] font-semibold tracking-[0.1em] text-[#9a9a9a] uppercase leading-relaxed max-w-lg mt-4">
+            MOBILE APP DEVELOPER • WEBAPP DEVELOPER • AI ENGINEER LLMS AND MODEL • VAPT AND ETHICAL HACKER
           </p>
-          <div className="h-[1px] w-24 bg-gray-600 mx-auto my-6"></div>
-          <p className="text-sm sm:text-lg md:text-xl font-light opacity-80 tracking-[0.1em] sm:tracking-[0.2em] mt-3 uppercase text-gray-300">
-            Mobile App Developer &bull; WebApp Developer &bull; AI Engineer LLMs and Model &bull; VAPT and Ethical Hacker
-          </p>
+
+          <div className="flex flex-wrap items-center gap-6 mt-8">
+            <a href="#work" className="px-6 py-4 rounded-full border border-white/30 bg-black text-white text-base md:text-lg pointer-events-auto font-medium hover:bg-white/10 transition-colors flex items-center gap-3 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+              Explore Portfolio
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+
+            {/* Tech Stack Icons */}
+            <div className="flex -space-x-3">
+              <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border-2 border-[#050505] flex items-center justify-center overflow-hidden shrink-0 shadow-lg"><img src="/images/logos/react.png" alt="React" className="w-6 h-6 object-contain" /></div>
+              <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border-2 border-[#050505] flex items-center justify-center overflow-hidden shrink-0 shadow-lg"><img src="/images/logos/node.png" alt="Node" className="w-6 h-6 object-contain" /></div>
+              <div className="w-12 h-12 rounded-full bg-[#1A1A1A] border-2 border-[#050505] flex items-center justify-center overflow-hidden shrink-0 shadow-lg"><img src="/images/logos/python.svg" alt="Python" className="w-6 h-6 object-contain" /></div>
+            </div>
+          </div>
         </div>
+
+        {/* Right Image */}
+        <div className="relative flex justify-center lg:justify-end hero-image mt-20 lg:mt-0 xl:mr-10">
+
+          {/* Blue Neon Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-[280px] h-[350px] md:w-[400px] md:h-[500px] bg-[#3b82f6] opacity-60 blur-[100px] rounded-[3rem] z-0 pointer-events-none"></div>
+
+          {/* White Card background */}
+          <div className="relative z-10 w-[280px] h-[360px] md:w-[320px] md:h-[420px] lg:w-[380px] lg:h-[480px] bg-white rounded-[1.5rem] shadow-2xl flex items-end justify-center">
+
+            {/* The Image overlaid (sticking out on top if transparent) */}
+            <img
+              src="/images/jothis-pro.jpg"
+              alt="Jothiswaran R"
+              className="absolute bottom-0 w-[115%] min-w-[320px] md:min-w-[380px] lg:min-w-[440px] h-[115%] object-cover z-20 drop-shadow-2xl rounded-b-[1.5rem]"
+              style={{ objectPosition: 'center 10%' }}
+            />
+
+          </div>
+        </div>
+
       </div>
     </section>
   );
